@@ -8,7 +8,7 @@
   .items { 
       list-style-type: none; padding: 0; position: relative;
       border: 1px solid black; height: 390px; overflow-y: auto; overflow-x: hidden;
-      width: 200px;
+      width: 400px;
   }
   .items li { 
       height: 50px; width: 100%; line-height: 50px; padding-left: 20px;
@@ -61,18 +61,18 @@
 
 <p>
   <a>Search</a>
-  <input type="text" value="" size="15" id="s" name="s" class="rounded">
+  <input type="text" value="" size="45" id="s" name="s" class="rounded">
 </p>
 
 <ul class="items">
-    <li>201X</li>
-    <li>2015-01-01 15:13.txt</li>
-    <li>Wednesday <a href="#" class="delete">delete</a></li>
-    <li>Thursday <a href="#" class="delete">delete</a></li>
-    <li>Friday <a href="#" class="delete">delete</a></li>
-    <li>Saturday <a href="#" class="delete">delete</a></li>
-    <li>Sunday <a href="#" class="delete">delete</a></li>
+    <li>+ New Item <a href="#" class="append">new</a></li>
+    <li>2011-2012 <a href="#" class="show">show</a></li>
+    <li>2013 <a href="#" class="show">show</a></li>
+    <li>2014 <a href="#" class="show">show</a></li>
+    <li>2015-01-01 15:13.txt <a href="#" class="delete">delete</a></li>
+    <li>2015-01-03.txt <a href="#" class="delete">delete</a></li>
+    <li>2015-01-05 12:13:01.txt <a href="#" class="delete">delete</a></li>
+    <li>2015-01-05 12:13:05.txt <a href="#" class="delete">delete</a></li>
 </ul>
-<button class="append">Add item</button>
 </body>
 </html>
