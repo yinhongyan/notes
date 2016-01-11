@@ -9,12 +9,17 @@
       list-style-type: none; padding: 0; position: relative;
       border: 1px solid black; height: 390px; overflow-y: auto; overflow-x: hidden;
       width: 400px;
+      background: #eee;
   }
   .items li { 
       height: 50px; width: 100%; line-height: 50px; padding-left: 20px;
-      border: 1px solid silver; background: #eee;
+      border: 1px solid silver;
       position: absolute; top: 0; left: 0; 
       -webkit-transition: all 0.2s ease-out; transition: all 0.2s ease-out;
+  }
+  
+  .highlight, .highlight_stay{
+      background: #e3eff8;
   }
 
   /* See later in the blog post for a cleaner way to generate these rules */
@@ -37,6 +42,40 @@
   
   <script type="text/javascript">//<![CDATA[
 
+  current_item = null;
+    
+  on_new = function() {
+    $("<li>New item</li>").insertAfter($(".items").children()[2]);
+    apply_li()
+  }
+
+  select_item = function(e) {
+    current_item = e
+
+    $("li").each(function(i, obj) {
+      $(obj).removeClass('highlight_stay');
+    });
+    
+    $(current_item).addClass('highlight_stay');
+  }
+  
+  on_delete = function() {
+    $(current_item).remove();
+    current_item = null
+  }
+  
+  apply_li = function(e) {
+    $('li').hover(function(){
+         $(this).addClass('highlight');
+     }, function(){
+         $(this).removeClass('highlight');
+     });
+
+     $('li').click(function(){
+          select_item(this)
+     });
+  }
+
   $(function() {
       $(document.body).on("click", ".delete", function (evt) {
           evt.preventDefault();
@@ -44,7 +83,7 @@
       });
     
       $(".append").click(function () {
-          $("<li>New item</li>").insertAfter($(".items").children()[2]);
+        on_new()
       });
 
       // Workaround for Webkit bug: force scroll height to be recomputed after the transition ends, not only when it starts
@@ -52,6 +91,8 @@
           $(this).hide().offset();
           $(this).show();
       });
+      
+      apply_li()
   });
   //]]> 
 
@@ -59,20 +100,26 @@
 </head>
 <body>
 
+<select>
+  <option value="journal">/Users/axet/private/journal</option>
+  <option value="youtube_playlist">/Users/axet/Documents/YouTube Playlist</option>
+</select>
+
 <p>
   <a>Search</a>
   <input type="text" value="" size="45" id="s" name="s" class="rounded">
 </p>
 
+<p><button type="button" onclick="on_new()">new item</button><button type="button" onclick="on_delete()">delete</button></p>
+
 <ul class="items">
-    <li>+ New Item <a href="#" class="append">new</a></li>
-    <li>2011-2012 <a href="#" class="show">show</a></li>
-    <li>2013 <a href="#" class="show">show</a></li>
-    <li>2014 <a href="#" class="show">show</a></li>
-    <li>2015-01-01 15:13.txt <a href="#" class="delete">delete</a></li>
-    <li>2015-01-03.txt <a href="#" class="delete">delete</a></li>
-    <li>2015-01-05 12:13:01.txt <a href="#" class="delete">delete</a></li>
-    <li>2015-01-05 12:13:05.txt <a href="#" class="delete">delete</a></li>
+    <li>2011-2012</li>
+    <li>2013</li>
+    <li>2014</li>
+    <li>2015-01-01 15:13.txt</li>
+    <li>2015-01-03.txt</li>
+    <li>2015-01-05 12:13:01.txt</li>
+    <li>2015-01-05 12:13:05.txt</li>
 </ul>
 </body>
 </html>
