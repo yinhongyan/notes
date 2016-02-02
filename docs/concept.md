@@ -42,6 +42,8 @@ content: RSS url2
 
 Encruption: Folder can be encrypted, shared content will be shared encrypted. And only subscriber who has a key can decrypt it. Here is only one key pairs. All subscribers has one key to decrupt content.
 
+Share: You can share whole folder or individual item with. Every shared item has GUID - global unique ID, cypto strong (act as a public key).
+
 Subscriber, can subscribe for a full folder. Or choose ways to subscribe:
 * recent 10 records
 * recent 30 days
