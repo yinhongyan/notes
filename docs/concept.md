@@ -34,10 +34,10 @@ Merge: Master able to merge items / folders by calling 'Merge' button on few ite
 
 Content captured to host's folder. Content keep's original URL. And have page content reference (which part of page were taken). It can be edited or altered by host (removing ads).
 
-[Folder ID: folder1]
-* [Folder ID: folder1-1]
+*[Folder ID: folder1]
+  * [Folder ID: folder1-1]
 content: RSS url1
-* [Folder ID: folder1-2]
+  * [Folder ID: folder1-2]
 content: RSS url2
 
 Encruption: Folder can be encrypted, shared content will be shared encrypted. And only subscriber who has a key can decrypt it. Here is only one key pairs. All subscribers has one key to decrupt content.
