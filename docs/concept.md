@@ -4,7 +4,7 @@ Folder Notes types
 
 
 
-* Library
+## Library
 
 Library / Movies / Games / Files
 
@@ -15,7 +15,7 @@ Name arangment + release date + description
 
 
 
-* Subscription
+## Subscription
 
 News / Journal / Blog / RSS / subscription agregator. We are subscripbing to master folder.
 
