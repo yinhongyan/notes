@@ -2,16 +2,22 @@
 
 Folder Notes types
 
+
+
 * Library
+
+Library / Movies / Games / Files
 
 Name arangment + release date + description
 
-Exolon (1987)
-Draconus (1988)
+* Exolon (1987)
+* Draconus (1988)
+
+
 
 * Subscription
 
-News / RSS / subscription agregator. We are subscripbing to master folder.
+News / Journal / Blog / RSS / subscription agregator. We are subscripbing to master folder.
 
 Left pane - Date arranged. Right - content, you can click to show including subfolders.
 
@@ -20,7 +26,7 @@ He can enter:
 
 * type texts manual, plain or rich
 * manual adding pictures, files, music podcasts.
-* clip content using browser plugin. including youtube video.
+* clip html content using browser plugin. including youtube video.
 * RSS subscription
   * RSS filters can be applied, to cut part of html, parse, extract urls, expand or download additional html, images or videos. per site / RSS filter bases.
 
@@ -34,7 +40,7 @@ content: RSS url1
 * [Folder ID: folder1-2]
 content: RSS url2
 
-Engruption: Folder can be encrypted, shared content will be shared encrypted. And only subscriber who has a key can decrypt it. Here is only one key pairs. All subscribers has one key to decrupt content.
+Encruption: Folder can be encrypted, shared content will be shared encrypted. And only subscriber who has a key can decrypt it. Here is only one key pairs. All subscribers has one key to decrupt content.
 
 Subscriber, can subscribe for a full folder. Or choose ways to subscribe:
 * recent 10 records
