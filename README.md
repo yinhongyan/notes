@@ -4,7 +4,7 @@ Notes project. Idea is to have file system based notes cross platform p2p applic
 
 This project can be used as personal private encypted network, where you can note simple text files, images, movies, youtube links, playlists with offline access and ignore country based restrictions.
 
-Adding some encyption key locking mechanisms, using bitcoin as subscription based distributed content - can make this network new content disctribution system (with movies, games, youtube vidoes globaly availabe, netflix proxy, personal and coloborative blog systems) above everying else currently on web.
+Adding some encyption key locking mechanisms, using bitcoin as subscription based distributed content - can make this network new content distribution system (with movies, games, youtube vidoes globaly availabe, netflix proxy, personal and coloborative blog systems) above everying else currently on web.
 
 Authors, movie productions, musician, publishers, mobile content publishers including apps and games - can and will have to use this network if they want to join this global collobaration and share network. Only one thing - you can't make overpriced pricing using this network. And here no place for someone who want get profit without doing any usefull job. 
 
