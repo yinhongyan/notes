@@ -10,7 +10,7 @@ Authors, movie productions, musician, publishers, mobile content publishers incl
 
 P2P mecanics will allow you to backup your notes on any remote, local, paid, free, server having just a folder global id.
 
-Check [concept.md](docs/concept.md)
+Check [docs/concept.md](docs/concept.md)
 
 ## Draws
 
