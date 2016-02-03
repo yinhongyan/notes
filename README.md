@@ -6,7 +6,7 @@ This project can be used as personal private encypted network, where you can not
 
 Adding some encyption key locking mechanisms, using bitcoin as subscription based distributed content - can make this network new content disctribution system (with movies, games, youtube vidoes globaly availabe, netflix proxy, personal and coloborative blog systems) above everying else currently on web.
 
-Authors, movie productions, musician, publishers, mobile content publishers including apps and games - can and will have to use this network if they want to join this global collobaration and share network. Only one thing - you can't make overpriced pricing using this network. And here no place for someone who wana get provit without doing any usefull job. 
+Authors, movie productions, musician, publishers, mobile content publishers including apps and games - can and will have to use this network if they want to join this global collobaration and share network. Only one thing - you can't make overpriced pricing using this network. And here no place for someone who want get profit without doing any usefull job. 
 
 P2P mecanics will allow you to backup your notes on any remote, local, paid, free, server having just a folder global id.
 
