@@ -1,7 +1,6 @@
 # Concept
 
-Folder Notes types
-
+Folder Notes types. Difference between them - how "merge/archive" button works.
 
 
 ## Library
