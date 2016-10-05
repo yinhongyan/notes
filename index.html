@@ -1,0 +1,217 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script src="jquery-1.11.3.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+<style>
+.ui-controlgroup-controls {
+  display: flex !important
+}
+.controlgroup-textinput {
+	padding-top:.22em !important;
+	padding-bottom:.22em !important;
+  flex-grow: 1 !important;
+  background-color:#fff !important;
+  text-align:left !important;
+  font-weight:normal !important;
+}
+.controlgroup-text {
+  flex-grow: 1 !important;
+}
+.ui-controlgroup-controls .ui-select {
+  flex-grow: 1 !important;
+}
+.listitem:hover {
+  background:none !important;
+  font-weight:normal !important;
+}
+.listitem {
+  background:none !important;
+  font-weight:normal !important;
+  white-space:normal !important;
+  cursor:default !important;
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+body {
+  font-family: Arial; overflow: hidden;
+}
+
+.items { 
+    list-style-type: none; padding: 0; position: relative;
+    border: 1px solid black; height: 390px; overflow-y: auto; overflow-x: hidden;
+    width: 400px;
+    background: #fefefe;
+}
+.items li { 
+    height: 50px; width: 100%; line-height: 50px; padding-left: 20px;
+    border: 1px solid silver;
+    position: absolute; top: 0; left: 0; 
+    -webkit-transition: all 0.2s ease-out; transition: all 0.2s ease-out;
+}
+
+.highlight, .highlight_stay{
+    background: #e3eff8;
+}
+
+/* See later in the blog post for a cleaner way to generate these rules */
+.items li:nth-child(1)  { -webkit-transform: translate3d(0, 0%, 0); transform: translate3d(0, 0%, 0); }
+.items li:nth-child(2)  { -webkit-transform: translate3d(0, 100%, 0); transform: translate3d(0, 100%, 0); }
+.items li:nth-child(3)  { -webkit-transform: translate3d(0, 200%, 0); transform: translate3d(0, 200%, 0); }
+.items li:nth-child(4)  { -webkit-transform: translate3d(0, 300%, 0); transform: translate3d(0, 300%, 0); }
+.items li:nth-child(5)  { -webkit-transform: translate3d(0, 400%, 0); transform: translate3d(0, 400%, 0); }
+.items li:nth-child(6)  { -webkit-transform: translate3d(0, 500%, 0); transform: translate3d(0, 500%, 0); }
+.items li:nth-child(7)  { -webkit-transform: translate3d(0, 600%, 0); transform: translate3d(0, 600%, 0); }
+.items li:nth-child(8)  { -webkit-transform: translate3d(0, 700%, 0); transform: translate3d(0, 700%, 0); }
+.items li:nth-child(9)  { -webkit-transform: translate3d(0, 800%, 0); transform: translate3d(0, 800%, 0); }
+.items li:nth-child(10) { -webkit-transform: translate3d(0, 900%, 0); transform: translate3d(0, 900%, 0); }
+.items li:nth-child(11) { -webkit-transform: translate3d(0, 1000%, 0); transform: translate3d(0, 1000%, 0); }
+.items li:nth-child(12) { -webkit-transform: translate3d(0, 1100%, 0); transform: translate3d(0, 1100%, 0); }
+.items li:nth-child(13) { -webkit-transform: translate3d(0, 1200%, 0); transform: translate3d(0, 1200%, 0); }
+.items li:nth-child(14) { -webkit-transform: translate3d(0, 1300%, 0); transform: translate3d(0, 1300%, 0); }
+.items li:nth-child(15) { -webkit-transform: translate3d(0, 1400%, 0); transform: translate3d(0, 1400%, 0); }
+</style>
+  
+  <script type="text/javascript">//<![CDATA[
+
+  current_item = null;
+    
+  on_new = function() {
+    $("<li>New item</li>").insertAfter($(".items").children()[2]);
+    apply_li()
+  }
+
+  select_item = function(e) {
+    current_item = e
+
+    $("li").each(function(i, obj) {
+      $(obj).removeClass('highlight_stay');
+    });
+    
+    $(current_item).addClass('highlight_stay');
+  }
+  
+  on_delete = function() {
+    $(current_item).remove();
+    current_item = null
+  }
+  
+  apply_li = function(e) {
+    $('li').hover(function(){
+         $(this).addClass('highlight');
+     }, function(){
+         $(this).removeClass('highlight');
+     });
+
+     $('li').click(function(){
+          select_item(this)
+     });
+  }
+
+  $(function() {
+      $(document.body).on("click", ".delete", function (evt) {
+          evt.preventDefault();
+          $(this).closest("li").remove();
+      });
+    
+      $(".append").click(function () {
+        on_new()
+      });
+
+      // Workaround for Webkit bug: force scroll height to be recomputed after the transition ends, not only when it starts
+      $(".items").on("webkitTransitionEnd", function () {
+          $(this).hide().offset();
+          $(this).show();
+      });
+      
+      apply_li()
+  });
+  //]]> 
+
+  </script>
+</head>
+<body>
+  <script type="text/javascript">
+  </script>
+  <h3 class="ui-bar ui-bar-a">SMS Gate</h3>
+  <div class="ui-body">
+
+  <div data-role="controlgroup" data-type="horizontal">
+    <select data-wrapper-class="controlgroup-textinput ui-btn">
+      <option value="journal">/Users/axet/private/journal</option>
+      <option value="youtube_playlist">/Users/axet/Documents/YouTube Playlist</option>
+    </select>
+    <a href="#popupSecrets" data-rel="popup" data-transition="fade" class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext">Settings...</a>
+  </div>
+
+  <p>
+    <p>Search</p>
+    <input type="text" value="" size="45" id="s" name="s" class="rounded">
+  </p>
+
+  <p>
+    <a href="#" class="ui-btn ui-btn-inline ui-icon-refresh ui-btn-icon-left" data-icon="refresh" onclick="on_new()">new item</a>
+    <a href="#rebootDialog" class="ui-btn ui-btn-inline ui-icon-power ui-btn-icon-left" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" onclick="on_merge()">merge</a>
+    <a href="#uploadsDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline ui-icon-action ui-btn-icon-left" data-inline="true" data-transition="pop" onclick="on_settings()">settings</a>
+    <a href="#uploadsDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline ui-icon-action ui-btn-icon-left" data-inline="true" data-transition="pop" onclick="on_delete()">delete</a>
+  </p>
+
+  <div id="messages_list" data-role="collapsible-set">
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2005-2009</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2010</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2011-2012</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2013</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2014</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-01</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-02-01</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-02-02</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-02-02 photos</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-02-03 test title.txt</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-02-05 12:13:01.txt</h4>
+        <p>files n folders</p>
+    </div>
+    <div data-role="collapsible" data-content-theme="false">
+        <h4>2015-02-05 12:13:05.txt</h4>
+        <p>files n folders</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
