@@ -19,6 +19,7 @@
   font-weight:normal !important;
 }
 .controlgroup-text {
+  text-align: left;
   flex-grow: 1 !important;
 }
 .ui-controlgroup-controls .ui-select {
@@ -60,10 +61,10 @@
   </p>
 
   <p>
-    <a href="#" class="ui-btn ui-btn-inline ui-icon-refresh ui-btn-icon-left" data-icon="refresh" onclick="on_new()">new item</a>
-    <a href="#rebootDialog" class="ui-btn ui-btn-inline ui-icon-power ui-btn-icon-left" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" onclick="on_merge()">merge</a>
-    <a href="#uploadsDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline ui-icon-action ui-btn-icon-left" data-inline="true" data-transition="pop" onclick="on_settings()">settings</a>
-    <a href="#uploadsDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline ui-icon-action ui-btn-icon-left" data-inline="true" data-transition="pop" onclick="on_delete()">delete</a>
+    <a href="#" class="ui-btn ui-btn-inline ui-icon-plus ui-btn-icon-left" data-icon="refresh" onclick="on_new()">new item</a>
+    <a href="#rebootDialog" class="ui-btn ui-btn-inline ui-icon-bars ui-btn-icon-left" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop" onclick="on_merge()">merge</a>
+    <a href="#uploadsDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline ui-icon-gear ui-btn-icon-left" data-inline="true" data-transition="pop" onclick="on_settings()">settings</a>
+    <a href="#uploadsDialog" data-rel="popup" data-position-to="window" class="ui-btn ui-btn-inline ui-icon-delete ui-btn-icon-left" data-inline="true" data-transition="pop" onclick="on_delete()">delete</a>
   </p>
 
   <div id="messages_list" data-role="collapsible-set">
@@ -103,17 +104,11 @@
         <h4>2015-02-02 photos</h4>
         <p>files n folders</p>
     </div>
-    <div data-role="collapsible" data-content-theme="false">
-        <h4>2015-02-03 test title.txt</h4>
-        <p>files n folders</p>
-    </div>
-    <div data-role="collapsible" data-content-theme="false">
-        <h4>2015-02-05 12:13:01.txt</h4>
-        <p>files n folders</p>
-    </div>
-    <div data-role="collapsible" data-content-theme="false">
-        <h4>2015-02-05 12:13:05.txt</h4>
-        <p>files n folders</p>
+    <div class="ui-btn ui-btn-inherit ui-btn-icon-left ui-icon-tag"><p align="left" style="margin:0">2015-02-03 test title.txt</p></div>
+    <div class="ui-btn ui-btn-inherit ui-btn-icon-left ui-icon-tag"><h4 align="left" style="margin:0">2015-02-05 12:13:01.txt</h4></div>
+    <div data-role="controlgroup" data-type="horizontal">
+        <a href="#" class="controlgroup-text ui-btn ui-btn ui-btn-icon-left ui-icon-tag ui-btn-inline">2015-02-05 12:13:05.txt</a>
+        <a href="#" title="Delete" class="ui-btn ui-btn-icon-notext ui-icon-gear ui-btn-inline"></a>
     </div>
   </div>
 </div>
